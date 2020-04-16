@@ -33,4 +33,28 @@ public class UsuarioRepositoryTest {
 		Assertions.assertThat(result).isTrue();
 		
 	}
+	
+	@Test
+	public void deveRetornarFalsoQuandoNaoHouverUsuarioCadastradoComOEmail() {
+		
+		//cenario
+		repository.deleteAll();
+		
+		//açao
+		boolean result = repository.existsByEmail("usuario@gmail.com");
+		
+		//Verificação
+		Assertions.assertThat(result).isFalse();
+		
+	}
+	
 }
+
+
+
+
+
+
+
+
+

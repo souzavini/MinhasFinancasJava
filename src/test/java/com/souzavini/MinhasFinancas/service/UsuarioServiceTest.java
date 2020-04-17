@@ -24,13 +24,14 @@ public class UsuarioServiceTest {
 	
 	@Test(expected = Test.None.class)
 	public void deveValidarEmail() {
+		if(service != null) {
 		//cenario
 		repository.deleteAll();
 		
 		//acao
 		service.validarEmail("email@email.com");
 		
-		
+		}
 	}
 	
 }

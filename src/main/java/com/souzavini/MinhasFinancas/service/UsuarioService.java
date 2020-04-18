@@ -2,7 +2,7 @@ package com.souzavini.MinhasFinancas.service;
 
 import com.souzavini.MinhasFinancas.model.entity.Usuario;
 
-public interface UsuarioService {
+public interface UsuarioService{
 	
 	Usuario autenticar(String email, String senha);
 	

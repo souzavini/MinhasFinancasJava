@@ -32,7 +32,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 		}
 		
 		if(!usuario.get().getSenha().equals(senha)) {
-			throw new ErroAutenticacao("Senha inválida.");
+			throw new ErroAutenticacao("Senha inválida");
 		}
 		
 		return usuario.get();
@@ -47,6 +47,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 	@Override
 	public void validarEmail(String email) {
+		
 		boolean existe = repository.existsByEmail(email);
 		if(existe) {
 			throw new RegraNegocioException("Já existe um usuario cadastrado com este email");

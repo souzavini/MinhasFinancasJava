@@ -3,6 +3,7 @@ package com.souzavini.MinhasFinancas.service.impl;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
@@ -53,7 +54,7 @@ public class LancamentoServiceImpl implements LancamentoService {
 
 	@Override
 	@Transactional(readOnly = true)
-	public List<Lancamentos> bsucar(Lancamentos lancamentoFiltro) {
+	public List<Lancamentos> buscar(Lancamentos lancamentoFiltro) {
 		
 		Example example = Example.of(lancamentoFiltro, 
 				ExampleMatcher.matching()
@@ -99,6 +100,12 @@ public class LancamentoServiceImpl implements LancamentoService {
 			throw new RegraNegocioException("informe um tipo de Lançamento");
 		}
 		
+	}
+
+	@Override
+	public Optional<Lancamentos> obterPorId(Long id) {
+		
+		return repository.findById(id);
 	}
 
 }

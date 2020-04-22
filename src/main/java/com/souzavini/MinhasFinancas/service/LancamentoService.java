@@ -1,6 +1,7 @@
 package com.souzavini.MinhasFinancas.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.souzavini.MinhasFinancas.model.entity.Lancamentos;
 import com.souzavini.MinhasFinancas.model.enums.StatusLancamento;
@@ -13,10 +14,12 @@ public interface LancamentoService {
 	
 	void deletar(Lancamentos lancamento);
 	
-	List<Lancamentos> bsucar( Lancamentos lancamentoFiltro);
+	List<Lancamentos> buscar( Lancamentos lancamentoFiltro);
 	
 	void atualizarStatus(Lancamentos lancamento, StatusLancamento status);
 	
 	void validar(Lancamentos lancamento);
+	
+	Optional<Lancamentos> obterPorId(Long id);
 	
 }

@@ -1,5 +1,6 @@
 package com.souzavini.MinhasFinancas.service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,5 +22,7 @@ public interface LancamentoService {
 	void validar(Lancamentos lancamento);
 	
 	Optional<Lancamentos> obterPorId(Long id);
+	
+	BigDecimal obterSaldoPorUsuario(Long id);
 	
 }
